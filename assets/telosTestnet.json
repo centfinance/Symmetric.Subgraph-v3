@@ -1,0 +1,22 @@
+{
+  "stableAssets": [
+    {
+      "address": "0xF9485b3fffd191e28a089C21cD745cc228a181E3",
+      "symbol": "USDC"
+    },
+    {
+      "address": "0x39D33701581EE17DfF7dBeEcCC35210aEE7B0417",
+      "symbol": "USDT"
+    }
+  ],
+  "pricingAssets": [
+    {
+      "address": "0xF5Dd4A1fCE57D9aCd7a4fEF03709402014b56813",
+      "symbol": "WTLOs"
+    },
+    {
+      "address": "0x4446664638E7cF5222c58907248cA3D8EE40b405",
+      "symbol": "SYMM"
+    }
+  ]
+}
