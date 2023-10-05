@@ -753,7 +753,7 @@ base:
   TempLiquidityBootstrappingPoolFactory:
     address: "0x0c6052254551EAe3ECac77B01DFcf1025418828f"
     startBlock: 1206531
-telosTestnet:
+telos-testnet:
   network: telosTestnet
   EventEmitter:
     address: "0x025cBFc6482baB7301e769Dd826e2f7354E30892"
