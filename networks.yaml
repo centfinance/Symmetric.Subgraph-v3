@@ -753,6 +753,26 @@ base:
   TempLiquidityBootstrappingPoolFactory:
     address: "0x0c6052254551EAe3ECac77B01DFcf1025418828f"
     startBlock: 1206531
+telos:
+  network: telos
+  EventEmitter:
+    address: "0x332e0bf729f06C9e08ffA42ABb1312Fcd16289e7"
+    startBlock: 308580659
+  Vault:
+    address: "0xbccc4b4c6530F82FE309c5E845E50b5E9C89f2AD"
+    startBlock: 308572378
+  WeightedPoolV4Factory:
+    address: "0xdd58D43a829067129B8C37f1924D31B1896ac0C6"
+    startBlock: 308576086
+  ComposableStablePoolV5Factory:
+    address: "0x98add7DC34a382e188be709a72Ca8fCDF7e548db"
+    startBlock: 308578557
+  TempLiquidityBootstrappingPoolFactory:
+    address: "0x266b53bb135f2dbc324b5C5Aa281e84f1C105B26"
+    startBlock: 308582430
+  ManagedPoolV2Factory:
+    address: "0x4eD870363d69F0f2c565332342eFC68ca82b544b"
+    startBlock: 308584230
 telos-testnet:
   network: telos-testnet
   EventEmitter:

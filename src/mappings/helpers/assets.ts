@@ -11,20 +11,18 @@ class Assets {
   public fxAggregators: Address[];
 }
 
-export const USDC_ADDRESS = Address.fromString('0xF9485b3fffd191e28a089C21cD745cc228a181E3');
+export const USDC_ADDRESS = Address.fromString('0x8D97Cea50351Fb4329d591682b148D43a0C3611b');
 export const USDT_ADDRESS = Address.fromString('0x39D33701581EE17DfF7dBeEcCC35210aEE7B0417');
 
 export const assets: Assets = {
   stableAssets: [
     Address.fromString('0xF9485b3fffd191e28a089C21cD745cc228a181E3'), // USDC
-    Address.fromString('0x39D33701581EE17DfF7dBeEcCC35210aEE7B0417'), // USDT
+    Address.fromString('0x975Ed13fa16857E83e7C493C7741D556eaaD4A3f'), // USDT
   ],
   pricingAssets: [
-    Address.fromString('0xF5Dd4A1fCE57D9aCd7a4fEF03709402014b56813'), // WTLOs
-    Address.fromString('0x4446664638E7cF5222c58907248cA3D8EE40b405'), // SYMM
+    Address.fromString('0xd102ce6a4db07d247fcc28f366a623df0938ca9e'), // WTLOS
+    // Address.fromString('0x4446664638E7cF5222c58907248cA3D8EE40b405'), // TSYMM
   ],
-  fxAssets: [
-  ],
-  fxAggregators: [
-  ],
+  fxAssets: [],
+  fxAggregators: [],
 };

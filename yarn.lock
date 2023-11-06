@@ -1672,6 +1672,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@goldskycom/cli@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "@goldskycom/cli@npm:7.0.0"
+  dependencies:
+    cuid: "npm:^2.1.8"
+    parse-duration: "npm:^1.0.3"
+    readline-sync: "npm:^1.4.10"
+  bin:
+    goldsky: bin/goldsky
+  checksum: 3ef42dc11e4fe9a12c855e385a9cd6e109d40e25bf05da5091943dcfe5c6f5393bc54eb9f800adc539fd98254a1382b248a8a80a0d802d7fd99927f1fda6b22d
+  languageName: node
+  linkType: hard
+
 "@graphprotocol/graph-cli@npm:0.52.0":
   version: 0.52.0
   resolution: "@graphprotocol/graph-cli@npm:0.52.0"
@@ -3607,6 +3620,7 @@ __metadata:
     "@babel/core": "npm:^7.12.13"
     "@babel/preset-env": "npm:^7.12.13"
     "@babel/preset-typescript": "npm:^7.12.13"
+    "@goldskycom/cli": "npm:^7.0.0"
     "@graphprotocol/graph-cli": "npm:0.52.0"
     "@graphprotocol/graph-ts": "npm:0.31.0"
     "@types/jest": "npm:^26.0.20"
@@ -4510,6 +4524,13 @@ __metadata:
   dependencies:
     cssom: "npm:~0.3.6"
   checksum: 863400da2a458f73272b9a55ba7ff05de40d850f22eb4f37311abebd7eff801cf1cd2fb04c4c92b8c3daed83fe766e52e4112afb7bc88d86c63a9c2256a7d178
+  languageName: node
+  linkType: hard
+
+"cuid@npm:^2.1.8":
+  version: 2.1.8
+  resolution: "cuid@npm:2.1.8"
+  checksum: 6514d247c6de3e5cd32f485821365f4816ee14b777841fa717d37b7a8f791f3cb268be9e37ca54b110f6f5f625e4f0af581c3226aa14f259790539ba20fdaf61
   languageName: node
   linkType: hard
 
@@ -8904,6 +8925,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"parse-duration@npm:^1.0.3":
+  version: 1.1.0
+  resolution: "parse-duration@npm:1.1.0"
+  checksum: 26fd83ed8f34b11a6ddb4553c97f4a75decc7a42ffa10c3e998287930cdbd91f27b7958bf5461be3b709bd064245ddccf43566ad8f4daaed2c983f5a7c7f8aed
+  languageName: node
+  linkType: hard
+
 "parse-json@npm:^5.0.0":
   version: 5.2.0
   resolution: "parse-json@npm:5.2.0"
@@ -9407,6 +9435,13 @@ __metadata:
   dependencies:
     picomatch: "npm:^2.2.1"
   checksum: 6fa848cf63d1b82ab4e985f4cf72bd55b7dcfd8e0a376905804e48c3634b7e749170940ba77b32804d5fe93b3cc521aa95a8d7e7d725f830da6d93f3669ce66b
+  languageName: node
+  linkType: hard
+
+"readline-sync@npm:^1.4.10":
+  version: 1.4.10
+  resolution: "readline-sync@npm:1.4.10"
+  checksum: 0a4d0fe4ad501f8f005a3c9cbf3cc0ae6ca2ced93e9a1c7c46f226bdfcb6ef5d3f437ae7e9d2e1098ee13524a3739c830e4c8dbc7f543a693eecd293e41093a3
   languageName: node
   linkType: hard
 
