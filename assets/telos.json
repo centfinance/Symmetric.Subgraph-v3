@@ -1,0 +1,18 @@
+{
+  "stableAssets": [
+    {
+      "address": "0x8d97cea50351fb4329d591682b148d43a0c3611b",
+      "symbol": "USDC"
+    },
+    {
+      "address": "0x975ed13fa16857e83e7c493c7741d556eaad4a3f",
+      "symbol": "USDT"
+    }
+  ],
+  "pricingAssets": [
+    {
+      "address": "0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E",
+      "symbol": "WTLOS"
+    }
+  ]
+}
