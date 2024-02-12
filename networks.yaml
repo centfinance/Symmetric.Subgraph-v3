@@ -475,59 +475,59 @@ bnb:
   AaveLinearPoolV5Factory:
     address: "0xE605Dbe1cA85dCdb8F43CEfA427f3B0fC06f6ba6"
     startBlock: 27339771
-gnosis:
-  network: gnosis
-  EventEmitter:
-    address: "0xd8bf95b44772213905a8a74881862347acbabc48"
-    startBlock: 26892431
-  Vault:
-    address: "0xBA12222222228d8Ba445958a75a0704d566BF2C8"
-    startBlock: 24821598
-  WeightedPoolV2Factory:
-    address: "0xf302f9F50958c5593770FDf4d4812309fF77414f"
-    startBlock: 25414470
-  WeightedPoolV3Factory:
-    address: "0xC128a9954e6c874eA3d62ce62B468bA073093F25"
-    startBlock: 26226256
-  WeightedPoolV4Factory:
-    address: "0x6CaD2ea22BFA7F4C14Aae92E47F510Cd5C509bc7"
-    startBlock: 27055829
-  StablePoolV2Factory:
-    address: "0xf23b4DB826DbA14c0e857029dfF076b1c0264843"
-    startBlock: 25415344
-  ComposableStablePoolV2Factory:
-    address: "0x76578ecf9a141296Ec657847fb45B0585bCDa3a6"
-    startBlock: 25415385
-  ComposableStablePoolV3Factory:
-    address: "0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD"
-    startBlock: 26365805
-  ComposableStablePoolV4Factory:
-    address: "0xD87F44Df0159DC78029AB9CA7D7e57E7249F5ACD"
-    startBlock: 27056416
-  ComposableStablePoolV5Factory:
-    address: "0x4bdCc2fb18AEb9e2d281b0278D946445070EAda7"
-    startBlock: 28832248
-  AaveLinearPoolV3Factory:
-    address: "0x9dd5Db2d38b50bEF682cE532bCca5DfD203915E1"
-    startBlock: 25415464
-  AaveLinearPoolV4Factory:
-    address: "0x9dA18982a33FD0c7051B19F0d7C76F2d5E7e017c"
-    startBlock: 26410978
-  AaveLinearPoolV5Factory:
-    address: "0x62aaB12865d7281048c337D53a4dde9d770321E6"
-    startBlock: 27443297
-  ERC4626LinearPoolFactory:
-    address: "0x4132f7AcC9dB7A6cF7BE2Dd3A9DC8b30C7E6E6c8"
-    startBlock: 25415264
-  TempLiquidityBootstrappingPoolFactory:
-    address: "0x85a80afee867aDf27B50BdB7b76DA70f1E853062"
-    startBlock: 25415236
-  ManagedPoolV2Factory:
-    address: "0xDF9B5B00Ef9bca66e9902Bd813dB14e4343Be025"
-    startBlock: 27434722
-  ProtocolIdRegistry:
-    address: "0x6B5dA774890Db7B7b96C6f44e6a4b0F657399E2e"
-    startBlock: 26691522
+# gnosis:
+#   network: gnosis
+#   EventEmitter:
+#     address: "0xd8bf95b44772213905a8a74881862347acbabc48"
+#     startBlock: 26892431
+#   Vault:
+#     address: "0xBA12222222228d8Ba445958a75a0704d566BF2C8"
+#     startBlock: 24821598
+#   WeightedPoolV2Factory:
+#     address: "0xf302f9F50958c5593770FDf4d4812309fF77414f"
+#     startBlock: 25414470
+#   WeightedPoolV3Factory:
+#     address: "0xC128a9954e6c874eA3d62ce62B468bA073093F25"
+#     startBlock: 26226256
+#   WeightedPoolV4Factory:
+#     address: "0x6CaD2ea22BFA7F4C14Aae92E47F510Cd5C509bc7"
+#     startBlock: 27055829
+#   StablePoolV2Factory:
+#     address: "0xf23b4DB826DbA14c0e857029dfF076b1c0264843"
+#     startBlock: 25415344
+#   ComposableStablePoolV2Factory:
+#     address: "0x76578ecf9a141296Ec657847fb45B0585bCDa3a6"
+#     startBlock: 25415385
+#   ComposableStablePoolV3Factory:
+#     address: "0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD"
+#     startBlock: 26365805
+#   ComposableStablePoolV4Factory:
+#     address: "0xD87F44Df0159DC78029AB9CA7D7e57E7249F5ACD"
+#     startBlock: 27056416
+#   ComposableStablePoolV5Factory:
+#     address: "0x4bdCc2fb18AEb9e2d281b0278D946445070EAda7"
+#     startBlock: 28832248
+#   AaveLinearPoolV3Factory:
+#     address: "0x9dd5Db2d38b50bEF682cE532bCca5DfD203915E1"
+#     startBlock: 25415464
+#   AaveLinearPoolV4Factory:
+#     address: "0x9dA18982a33FD0c7051B19F0d7C76F2d5E7e017c"
+#     startBlock: 26410978
+#   AaveLinearPoolV5Factory:
+#     address: "0x62aaB12865d7281048c337D53a4dde9d770321E6"
+#     startBlock: 27443297
+#   ERC4626LinearPoolFactory:
+#     address: "0x4132f7AcC9dB7A6cF7BE2Dd3A9DC8b30C7E6E6c8"
+#     startBlock: 25415264
+#   TempLiquidityBootstrappingPoolFactory:
+#     address: "0x85a80afee867aDf27B50BdB7b76DA70f1E853062"
+#     startBlock: 25415236
+#   ManagedPoolV2Factory:
+#     address: "0xDF9B5B00Ef9bca66e9902Bd813dB14e4343Be025"
+#     startBlock: 27434722
+#   ProtocolIdRegistry:
+#     address: "0x6B5dA774890Db7B7b96C6f44e6a4b0F657399E2e"
+#     startBlock: 26691522
 optimism:
   network: optimism
   graft:
@@ -793,3 +793,25 @@ telos-testnet:
   ManagedPoolV2Factory:
     address: "0xC2e78D8ACC2be81B065a539A26f13924c06661fA"
     startBlock: 260604556
+celo:
+  network: celo
+  Vault:
+    address: "0xD25E02047E76b688445ab154785F2642c6fe3f73"
+    startBlock: 13179948
+  WeightedPoolFactory:
+    address: "0x47B7bdA16AB8B617E976c83A2c3c8664944d8Ed2"
+    startBlock: 13179974
+  StablePoolFactory:
+    address: "0x7dF194500b8b8dcFe6A0b8E412f8a166c89Bf255"
+    startBlock: 13180017
+gnosis:
+  network: gnosis
+  Vault:
+    address: "0x24F87b37F4F249Da61D89c3FF776a55c321B2773"
+    startBlock: 22526277
+  WeightedPoolFactory:
+    address: "0xb13A501fA658389e437E3047d56F2Bf945207a5A"
+    startBlock: 22673404
+  StablePoolFactory:
+    address: "0xF9e6BE5A015Da5dc29B42ff345bB7Dd1b6C60aC7"
+    startBlock: 22663363

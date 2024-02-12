@@ -2,13 +2,14 @@
   "name": "balancer",
   "version": "0.1.0",
   "scripts": {
-    "create": "graph create balancer-labs/balancer-v2 --node https://api.thegraph.com/deploy/",
+    "create": "graph create symmetric-telos-testnet/1.0.0 --node http//thegraph.symm.fi/deploy",
     "create:local": "graph create balancer-labs/balancer-v2 --node http://127.0.0.1:8020",
     "codegen": "yarn generate-manifests && graph codegen --output-dir src/types/",
-    "build": "graph build subgraph.telos.yaml",
+    "build": "graph build subgraph.gnosis.yaml",
     "lint": "eslint --max-warnings 0 . --ext .ts",
     "test": "jest ./test/*.test.ts",
-    "deploy": "graph deploy symmetric-telos/1.0.0 --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy": "graph deploy centfinance/symmetric-v2-gnosis subgraph.gnosis.yaml --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy:testnet": "graph deploy symmetric/telos-testnet subgraph.telos-testnet.yaml --ipfs http://thegraph.symm.fi:5001 --node http://thegraph.symm.fi:8020",
     "deploy:local": "graph deploy symmetric-telos/1.0.0 subgraph.yaml --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
     "import-abis": "ts-node ./scripts/update-abis.ts",
     "generate-assets": "ts-node ./scripts/generate-assets",
@@ -17,7 +18,8 @@
     "update-addresses:goerli": "yarn update-addresses goerli",
     "update-addresses:local": "yarn update-addresses dockerParity",
     "sync": "yarn import-abis && yarn update-addresses && yarn codegen && yarn build",
-    "sync:local": "yarn import-abis && yarn update-addresses dockerParity && yarn codegen && yarn build"
+    "sync:local": "yarn import-abis && yarn update-addresses dockerParity && yarn codegen && yarn build",
+    "deploy:help": "graph deploy -h"
   },
   "devDependencies": {
     "@apollo/client": "^3.3.9",

@@ -35,6 +35,8 @@ export let PRICING_ASSETS = assets.stableAssets.concat(assets.pricingAssets);
 
 class AddressByNetwork {
   public canonical: string;
+  public celo: string;
+  public gnosis: string;
   public custom: string;
 }
 
@@ -46,12 +48,18 @@ let network: string = dataSource.network();
 // with a new entry for the new network - folowwing subgraph slugs
 let vaultAddressByNetwork: AddressByNetwork = {
   canonical: '0xbccc4b4c6530F82FE309c5E845E50b5E9C89f2AD',
+  celo: '0x24F87b37F4F249Da61D89c3FF776a55c321B2773',
+  gnosis: '0xD25E02047E76b688445ab154785F2642c6fe3f73',
   custom: '0x0000000000000000000000000000000000000000',
 };
 
 function forNetwork(addressByNetwork: AddressByNetwork, network: string): Address {
   if (network == 'custom') {
     return Address.fromString(addressByNetwork.custom);
+  } else if (network == 'celo') {
+    return Address.fromString(addressByNetwork.celo);
+  } else if (network == 'gnosis') {
+    return Address.fromString(addressByNetwork.celo);
   } else {
     return Address.fromString(addressByNetwork.canonical);
   }
