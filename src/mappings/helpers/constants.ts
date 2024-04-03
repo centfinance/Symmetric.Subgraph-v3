@@ -37,6 +37,7 @@ class AddressByNetwork {
   public canonical: string;
   public celo: string;
   public gnosis: string;
+  public meter: string;
   public custom: string;
 }
 
@@ -50,6 +51,7 @@ let vaultAddressByNetwork: AddressByNetwork = {
   canonical: '0xbccc4b4c6530F82FE309c5E845E50b5E9C89f2AD',
   celo: '0x24F87b37F4F249Da61D89c3FF776a55c321B2773',
   gnosis: '0xD25E02047E76b688445ab154785F2642c6fe3f73',
+  meter: '0x913f21E596790aFC6AA45229E9ff8b7d0A473D5A',
   custom: '0x0000000000000000000000000000000000000000',
 };
 
@@ -59,7 +61,9 @@ function forNetwork(addressByNetwork: AddressByNetwork, network: string): Addres
   } else if (network == 'celo') {
     return Address.fromString(addressByNetwork.celo);
   } else if (network == 'gnosis') {
-    return Address.fromString(addressByNetwork.celo);
+    return Address.fromString(addressByNetwork.gnosis);
+  } else if (network == 'meter') {
+    return Address.fromString(addressByNetwork.meter);
   } else {
     return Address.fromString(addressByNetwork.canonical);
   }

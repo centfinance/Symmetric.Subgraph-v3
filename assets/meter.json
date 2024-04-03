@@ -1,0 +1,38 @@
+{
+  "stableAssets": [
+    {
+      "address": "0xd86e243fc0007e6226b07c9a50c9d70d78299eb5",
+      "symbol": "USDC"
+    },
+    {
+      "address": "0x5fa41671c48e3c951afc30816947126ccc8c162e",
+      "symbol": "USDT"
+    },
+    {
+      "address": "0x8bf591eae535f93a242d5a954d3cde648b48a5a8",
+      "symbol": "suUSD"
+    },
+    {
+      "address": "0x1ff97abe4c5a4b7ff90949b637e71626bef0dcee",
+      "symbol": "USDT-USDC-suUSD"
+    }
+  ],
+  "pricingAssets": [
+    {
+      "address": "0x228ebbee999c6a7ad74a6130e81b12f9fe237ba3",
+      "symbol": "MTRG"
+    },
+    {
+      "address": "0x663345e09F4F4437F3D5df39BA5c2B5690532206",
+      "symbol": "mSYMM"
+    },
+    {
+      "address": "0x215d603293357ca222be92a1bf75eec38def0aad",
+      "symbol": "stMTRG"
+    },
+    {
+      "address": "0x160361ce13ec33c993b5cca8f62b6864943eb083",
+      "symbol": "MTR"
+    }
+  ]
+}
