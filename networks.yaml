@@ -829,3 +829,17 @@ meter:
   ComposableStablePoolV5Factory:
     address: "0x7aa0DBFaCa97734F4E4Ae5DF0E3f2f957D76018F"
     startBlock: 51825611
+artela-betanet:
+  network: artela-betanet
+  EventEmitter:
+    address: "0x05C7f6F721C87d69338d2ef51352A91D30bC0Bb1"
+    startBlock: 6763465
+  Vault:
+    address: "0x6505f21E7E9DDB4f4A84bd1cA3Cad54B6ADf5cc4"
+    startBlock: 6762946
+  WeightedPoolV4Factory:
+    address: "0x7e3dAe5fd8FaED7C3Bef04F987c2eF68A9A350A4"
+    startBlock: 6763026
+  ComposableStablePoolV5Factory:
+    address: "0xC941936cE60223963A6aab6Bdb7dF0edF54c4EAa"
+    startBlock: 6763292

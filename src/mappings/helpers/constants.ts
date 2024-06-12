@@ -34,6 +34,7 @@ export let USD_STABLE_ASSETS = assets.stableAssets;
 export let PRICING_ASSETS = assets.stableAssets.concat(assets.pricingAssets);
 
 class AddressByNetwork {
+  public artelaBetanet: string;
   public canonical: string;
   public celo: string;
   public gnosis: string;
@@ -48,6 +49,7 @@ let network: string = dataSource.network();
 // in that case, AddressByNetwork and forNetwork must be updated accordingly
 // with a new entry for the new network - folowwing subgraph slugs
 let vaultAddressByNetwork: AddressByNetwork = {
+  artelaBetanet: '0x6505f21E7E9DDB4f4A84bd1cA3Cad54B6ADf5cc4',
   canonical: '0xbccc4b4c6530F82FE309c5E845E50b5E9C89f2AD',
   celo: '0x24F87b37F4F249Da61D89c3FF776a55c321B2773',
   gnosis: '0xD25E02047E76b688445ab154785F2642c6fe3f73',
@@ -64,6 +66,8 @@ function forNetwork(addressByNetwork: AddressByNetwork, network: string): Addres
     return Address.fromString(addressByNetwork.gnosis);
   } else if (network == 'meter') {
     return Address.fromString(addressByNetwork.meter);
+  } else if (network == 'artela-betanet') {
+    return Address.fromString(addressByNetwork.artelaBetanet);
   } else {
     return Address.fromString(addressByNetwork.canonical);
   }

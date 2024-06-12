@@ -24,9 +24,9 @@ export const assets: Assets = {
   ],
   pricingAssets: [
     Address.fromString('0x228ebbee999c6a7ad74a6130e81b12f9fe237ba3'), // MTRG
-    Address.fromString('0x663345e09F4F4437F3D5df39BA5c2B5690532206'), // mSYMM
     Address.fromString('0xe2de616fbd8cb9180b26fcfb1b761a232fe56717'), // wstMTRG
     Address.fromString('0x160361ce13ec33c993b5cca8f62b6864943eb083'), // MTR
+    Address.fromString('0x2077a828fd58025655335a8756dbcfeb7e5bec46'), // MTRG-wstMTRG
   ],
   fxAssets: [],
   fxAggregators: [],

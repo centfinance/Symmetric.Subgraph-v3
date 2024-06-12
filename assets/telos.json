@@ -29,6 +29,10 @@
     {
       "address": "0x058D4893eFa235D86CcEeD5a7Eef0809B76c8c66",
       "symbol": "USDC-USDT"
+    },
+    {
+      "address": "0xa3b4AeE7B43B2Fb390420c411ec180B0ae87E9da",
+      "symbol": "SOULS"
     }
   ]
 }
