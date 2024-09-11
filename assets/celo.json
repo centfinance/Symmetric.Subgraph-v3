@@ -1,18 +1,34 @@
 {
   "stableAssets": [
     {
+      "address": "0xceba9300f2b948710d2653dd7b07f33a8b32118c",
+      "symbol": "USDC"
+    },
+    {
+      "address": "0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e",
+      "symbol": "USDT"
+    },
+    {
       "address": "0x765de816845861e75a25fca122bb6898b8b1282a",
       "symbol": "CUSD"
     }
   ],
   "pricingAssets": [
     {
-      "address": "0x8427bd503dd3169ccc9aff7326c15258bc305478",
-      "symbol": "SYMM"
-    },
-    {
       "address": "0x471ece3750da237f93b8e339c536989b8978a438",
       "symbol": "CELO"
+    },
+    {
+      "address": "0x45a2992e1bfdcf9b9ace0a84a238f2e56f481816",
+      "symbol": "cSYMM"
+    },
+    {
+      "address": "0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73",
+      "symbol": "cEUR"
+    },
+    {
+      "address": "0xd629eb00deced2a080b7ec630ef6ac117e614f1b",
+      "symbol": "BTC"
     }
   ]
 }

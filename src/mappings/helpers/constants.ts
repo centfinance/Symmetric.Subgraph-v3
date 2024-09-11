@@ -40,6 +40,8 @@ class AddressByNetwork {
   public meter: string;
   public custom: string;
   public fantom: string;
+  public taiko: string;
+  public etherlink: string;
 }
 
 let network: string = dataSource.network();
@@ -51,11 +53,14 @@ let network: string = dataSource.network();
 let vaultAddressByNetwork: AddressByNetwork = {
   artelaBetanet: '0x6505f21E7E9DDB4f4A84bd1cA3Cad54B6ADf5cc4',
   canonical: '0xbccc4b4c6530F82FE309c5E845E50b5E9C89f2AD',
-  celo: '0x24F87b37F4F249Da61D89c3FF776a55c321B2773',
+  celo: '0xc2eb5c675A49F87843c814FE76576d20e10C3CD0',
+  //celo: '0x24F87b37F4F249Da61D89c3FF776a55c321B2773',
   gnosis: '0xD25E02047E76b688445ab154785F2642c6fe3f73',
   meter: '0x913f21E596790aFC6AA45229E9ff8b7d0A473D5A',
   custom: '0x0000000000000000000000000000000000000000',
   fantom: '0x20dd72Ed959b6147912C2e529F0a0C651c33c9ce',
+  taiko: '0xbccc4b4c6530F82FE309c5E845E50b5E9C89f2AD',
+  etherlink: '0xbccc4b4c6530F82FE309c5E845E50b5E9C89f2AD',
 };
 
 function forNetwork(addressByNetwork: AddressByNetwork, network: string): Address {

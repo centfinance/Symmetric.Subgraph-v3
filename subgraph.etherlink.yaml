@@ -1,19 +1,19 @@
 description: Balancer is a non-custodial portfolio manager, liquidity provider, and price sensor.
-specVersion: 0.0.2
+specVersion: 0.0.4
 repository: https://github.com/balancer-labs/balancer-subgraph-v2
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: EventEmitter
-    network: celo
+    network: etherlink
     source:
-      address: '0x5874CB63Fbd1F1A3d1DfCbB451dc35a49Ec63D30'
+      address: '0xc2eb5c675A49F87843c814FE76576d20e10C3CD0'
       abi: EventEmitter
-      startBlock: 27680967
+      startBlock: 2659285
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/eventEmitter.ts
       entities:
@@ -26,14 +26,14 @@ dataSources:
           handler: handleLogArgument
   - kind: ethereum/contract
     name: Vault
-    network: celo
+    network: etherlink
     source:
-      address: '0xc2eb5c675A49F87843c814FE76576d20e10C3CD0'
+      address: '0xbccc4b4c6530F82FE309c5E845E50b5E9C89f2AD'
       abi: Vault
-      startBlock: 27681341
+      startBlock: 2642360
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/vault.ts
       entities:
@@ -73,14 +73,14 @@ dataSources:
           handler: handleInternalBalanceChange
   - kind: ethereum/contract
     name: WeightedPoolV4Factory
-    network: celo
+    network: etherlink
     source:
-      address: '0x9c9D0025F27756217BDBb584cFB9Dd4aA58B1FEc'
+      address: '0x4e4131dC27ed9501ac5fEb76F94572fDAe9f0fD0'
       abi: WeightedPoolFactory
-      startBlock: 27681360
+      startBlock: 2642380
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolFactory.ts
       entities:
@@ -104,14 +104,14 @@ dataSources:
           handler: handleNewWeightedPoolV4
   - kind: ethereum/contract
     name: ComposableStablePoolV6Factory
-    network: celo
+    network: etherlink
     source:
-      address: '0xfff23CDf2e98b6ea6f0ae856e8DeF6Fdb3141dF1'
+      address: '0xFEF39453770fF2C6b2F453D1b6D075623a79e3Eb'
       abi: ComposableStablePoolV2Factory
-      startBlock: 27681377
+      startBlock: 2642389
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolFactory.ts
       entities:
@@ -136,12 +136,12 @@ dataSources:
 templates:
   - kind: ethereum/contract
     name: WeightedPool
-    network: celo
+    network: etherlink
     source:
       abi: WeightedPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -163,12 +163,12 @@ templates:
           handler: handlePausedStateChanged
   - kind: ethereum/contract
     name: WeightedPoolV2
-    network: celo
+    network: etherlink
     source:
       abi: WeightedPoolV2
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -194,12 +194,12 @@ templates:
           handler: handlePausedStateChanged
   - kind: ethereum/contract
     name: WeightedPool2Tokens
-    network: celo
+    network: etherlink
     source:
       abi: WeightedPool2Tokens
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -223,12 +223,12 @@ templates:
           handler: handlePausedStateChanged
   - kind: ethereum/contract
     name: StablePool
-    network: celo
+    network: etherlink
     source:
       abi: StablePool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -254,12 +254,12 @@ templates:
           handler: handlePausedStateChanged
   - kind: ethereum/contract
     name: MetaStablePool
-    network: celo
+    network: etherlink
     source:
       abi: MetaStablePool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -294,12 +294,12 @@ templates:
           handler: handlePausedStateChanged
   - kind: ethereum/contract
     name: ConvergentCurvePool
-    network: celo
+    network: etherlink
     source:
       abi: ConvergentCurvePool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -317,12 +317,12 @@ templates:
           handler: handleTransfer
   - kind: ethereum/contract
     name: LiquidityBootstrappingPool
-    network: celo
+    network: etherlink
     source:
       abi: LiquidityBootstrappingPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -349,12 +349,12 @@ templates:
           handler: handlePausedStateChanged
   - kind: ethereum/contract
     name: InvestmentPool
-    network: celo
+    network: etherlink
     source:
       abi: InvestmentPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -383,12 +383,12 @@ templates:
           handler: handlePausedStateChanged
   - kind: ethereum/contract
     name: ManagedPool
-    network: celo
+    network: etherlink
     source:
       abi: ManagedPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -439,12 +439,12 @@ templates:
           handler: handleEncodedProtocolFeePercentageCacheUpdated
   - kind: ethereum/contract
     name: StablePhantomPool
-    network: celo
+    network: etherlink
     source:
       abi: StablePhantomPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -477,12 +477,12 @@ templates:
           handler: handlePausedStateChanged
   - kind: ethereum/contract
     name: StablePhantomPoolV2
-    network: celo
+    network: etherlink
     source:
       abi: ComposableStablePool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -521,12 +521,12 @@ templates:
           handler: handlePausedStateChanged
   - kind: ethereum/contract
     name: LinearPool
-    network: celo
+    network: etherlink
     source:
       abi: LinearPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -555,12 +555,12 @@ templates:
           handler: handlePausedStateChanged
   - kind: ethereum/contract
     name: Gyro2Pool
-    network: celo
+    network: etherlink
     source:
       abi: Gyro2V2Pool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -585,12 +585,12 @@ templates:
           handler: handleUnpauseGyroPool
   - kind: ethereum/contract
     name: Gyro3Pool
-    network: celo
+    network: etherlink
     source:
       abi: Gyro3Pool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -615,12 +615,12 @@ templates:
           handler: handleUnpauseGyroPool
   - kind: ethereum/contract
     name: GyroEPool
-    network: celo
+    network: etherlink
     source:
       abi: GyroEV2Pool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -645,12 +645,12 @@ templates:
           handler: handleUnpauseGyroPool
   - kind: ethereum/contract
     name: FXPoolDeployer
-    network: celo
+    network: etherlink
     source:
       abi: FXPoolDeployer
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolFactory.ts
       entities:
@@ -683,12 +683,12 @@ templates:
           handler: handleNewFXPoolV2
   - kind: ethereum/contract
     name: FXPool
-    network: celo
+    network: etherlink
     source:
       abi: FXPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -709,12 +709,12 @@ templates:
           handler: handleParametersSet
   - kind: ethereum/contract
     name: OffchainAggregator
-    network: celo
+    network: etherlink
     source:
       abi: AccessControlledOffchainAggregator
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/pricing.ts
       entities:

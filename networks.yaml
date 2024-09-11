@@ -942,8 +942,8 @@ artela-betanet:
   ComposableStablePoolV5Factory:
     address: "0xC941936cE60223963A6aab6Bdb7dF0edF54c4EAa"
     startBlock: 6763292
-etherlink:
-  network: etherlink
+etherlink-mainnet:
+  network: etherlink-mainnet
   EventEmitter:
     address: "0xc2eb5c675A49F87843c814FE76576d20e10C3CD0"
     startBlock: 2659285

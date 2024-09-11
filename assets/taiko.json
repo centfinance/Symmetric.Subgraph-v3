@@ -1,0 +1,38 @@
+{
+  "stableAssets": [
+    {
+      "address": "0x7d02a3e0180451b17e5d7f29ef78d06f8117106c",
+      "symbol": "DAI"
+    },
+    {
+      "address": "0x19e26b0638bf63aa9fa4d14c6baf8d52ebe86c5c",
+      "symbol": "USDC.e"
+    },
+    {
+      "address": "0x07d83526730c7438048d55a4fc0b850e2aab6f0b",
+      "symbol": "USDC"
+    },
+    {
+      "address": "0x9c2dc7377717603eb92b2655c5f2e7997a4945bd",
+      "symbol": "USDT"
+    }
+  ],
+  "pricingAssets": [
+    {
+      "address": "0xa51894664a773981c6c112c43ce576f315d5b1b6",
+      "symbol": "WETH"
+    },
+    {
+      "address": "0xa9d23408b9ba935c230493c40c73824df71a0975",
+      "symbol": "TAIKO"
+    },
+    {
+      "address": "0x9c9d0025f27756217bdbb584cfb9dd4aa58b1fec",
+      "symbol": "tkSYMM"
+    },
+    {
+      "address": "0xc4c410459fbaf8f7f86b6cee52b4fa1282ff9704",
+      "symbol": "WBTC"
+    }
+  ]
+}
