@@ -795,6 +795,23 @@ telos-testnet:
     startBlock: 260604556
 celo:
   network: celo
+  EventEmitter:
+    address: "0x5874CB63Fbd1F1A3d1DfCbB451dc35a49Ec63D30"
+    startBlock: 27680967
+  Vault:
+    address: "0xc2eb5c675A49F87843c814FE76576d20e10C3CD0"
+    startBlock: 27681341
+  WeightedPoolV4Factory:
+    address: "0x9c9D0025F27756217BDBb584cFB9Dd4aA58B1FEc"
+    startBlock: 27681360
+  ComposableStablePoolV6Factory:
+    address: "0xfff23CDf2e98b6ea6f0ae856e8DeF6Fdb3141dF1"
+    startBlock: 27681377
+celo-v2:
+  network: celo
+  EventEmitter:
+    address: "0x5874CB63Fbd1F1A3d1DfCbB451dc35a49Ec63D30"
+    startBlock: 27680967
   Vault:
     address: "0xD25E02047E76b688445ab154785F2642c6fe3f73"
     startBlock: 13179948
@@ -843,3 +860,31 @@ artela-betanet:
   ComposableStablePoolV5Factory:
     address: "0xC941936cE60223963A6aab6Bdb7dF0edF54c4EAa"
     startBlock: 6763292
+etherlink:
+  network: etherlink
+  EventEmitter:
+    address: "0xc2eb5c675A49F87843c814FE76576d20e10C3CD0"
+    startBlock: 2659285
+  Vault:
+    address: "0xbccc4b4c6530F82FE309c5E845E50b5E9C89f2AD"
+    startBlock: 2642360
+  WeightedPoolV4Factory:
+    address: "0x4e4131dC27ed9501ac5fEb76F94572fDAe9f0fD0"
+    startBlock: 2642380
+  ComposableStablePoolV6Factory:
+    address: "0xFEF39453770fF2C6b2F453D1b6D075623a79e3Eb"
+    startBlock: 2642389
+taiko:
+  network: taiko
+  EventEmitter:
+    address: "0x266b53bb135f2dbc324b5C5Aa281e84f1C105B26"
+    startBlock: 373890
+  Vault:
+    address: "0xbccc4b4c6530F82FE309c5E845E50b5E9C89f2AD"
+    startBlock: 371729
+  WeightedPoolV4Factory:
+    address: "0x4e4131dC27ed9501ac5fEb76F94572fDAe9f0fD0"
+    startBlock: 371736
+  ComposableStablePoolV6Factory:
+    address: "0xFEF39453770fF2C6b2F453D1b6D075623a79e3Eb"
+    startBlock: 371741

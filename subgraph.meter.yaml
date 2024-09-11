@@ -1,4 +1,4 @@
-specVersion: 0.0.4
+specVersion: 0.0.2
 description: Balancer is a non-custodial portfolio manager, liquidity provider, and price sensor.
 repository: https://github.com/balancer-labs/balancer-subgraph-v2
 schema:
@@ -13,7 +13,7 @@ dataSources:
       startBlock: 52077485
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/eventEmitter.ts
       entities:
@@ -33,7 +33,7 @@ dataSources:
       startBlock: 51825430
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/vault.ts
       entities:
@@ -80,7 +80,7 @@ dataSources:
       startBlock: 51825561
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolFactory.ts
       entities:
@@ -111,7 +111,7 @@ dataSources:
       startBlock: 51825611
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolFactory.ts
       entities:
@@ -141,7 +141,7 @@ templates:
       abi: WeightedPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -168,7 +168,7 @@ templates:
       abi: WeightedPoolV2
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -199,7 +199,7 @@ templates:
       abi: WeightedPool2Tokens
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -228,7 +228,7 @@ templates:
       abi: StablePool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -259,7 +259,7 @@ templates:
       abi: MetaStablePool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -299,7 +299,7 @@ templates:
       abi: ConvergentCurvePool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -322,7 +322,7 @@ templates:
       abi: LiquidityBootstrappingPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -354,7 +354,7 @@ templates:
       abi: InvestmentPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -388,7 +388,7 @@ templates:
       abi: ManagedPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -444,7 +444,7 @@ templates:
       abi: StablePhantomPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -482,7 +482,7 @@ templates:
       abi: ComposableStablePool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -526,7 +526,7 @@ templates:
       abi: LinearPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -560,7 +560,7 @@ templates:
       abi: Gyro2Pool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -590,7 +590,7 @@ templates:
       abi: Gyro3Pool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -620,7 +620,7 @@ templates:
       abi: GyroEPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -650,7 +650,7 @@ templates:
       abi: FXPool
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/poolController.ts
       entities:
@@ -676,7 +676,7 @@ templates:
       abi: AccessControlledOffchainAggregator
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/pricing.ts
       entities:
