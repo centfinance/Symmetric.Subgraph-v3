@@ -1,5 +1,5 @@
-specVersion: 0.0.2
 description: Balancer is a non-custodial portfolio manager, liquidity provider, and price sensor.
+specVersion: 0.0.2
 repository: https://github.com/balancer-labs/balancer-subgraph-v2
 schema:
   file: ./schema.graphql
@@ -192,6 +192,26 @@ dataSources:
         - event: PoolCreated(indexed address)
           handler: handleNewManagedPoolV2
   - kind: ethereum/contract
+    name: ManagedKassandraPoolControllerFactory
+    network: avalanche
+    source:
+      address: '0xbBa46B512a158aF0e41111109617c660Ff903819'
+      abi: ManagedKassandraPoolControllerFactory
+      startBlock: 34853589
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/mappings/poolFactory.ts
+      entities:
+        - Pool
+      abis:
+        - name: ManagedKassandraPoolControllerFactory
+          file: ./abis/ManagedKassandraPoolControllerFactory.json
+      eventHandlers:
+        - event: KassandraPoolCreated(indexed address,indexed bytes32,indexed address,address,address,bool)
+          handler: handleNewManagedKassandraPool
+  - kind: ethereum/contract
     name: ComposableStablePoolV4Factory
     network: avalanche
     source:
@@ -253,6 +273,37 @@ dataSources:
       eventHandlers:
         - event: PoolCreated(indexed address)
           handler: handleNewComposableStablePoolV5
+  - kind: ethereum/contract
+    name: ComposableStablePoolV6Factory
+    network: avalanche
+    source:
+      address: '0xb9F8AB3ED3F3aCBa64Bc6cd2DcA74B7F38fD7B88'
+      abi: ComposableStablePoolV2Factory
+      startBlock: 42186350
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/mappings/poolFactory.ts
+      entities:
+        - Balancer
+        - Pool
+      abis:
+        - name: Vault
+          file: ./abis/Vault.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+        - name: WeightedPool
+          file: ./abis/WeightedPool.json
+        - name: ComposableStablePoolV2Factory
+          file: ./abis/ComposableStablePoolV2Factory.json
+        - name: ComposableStablePool
+          file: ./abis/ComposableStablePool.json
+        - name: StablePool
+          file: ./abis/StablePool.json
+      eventHandlers:
+        - event: PoolCreated(indexed address)
+          handler: handleNewComposableStablePoolV6
   - kind: ethereum/contract
     name: AaveLinearPoolV5Factory
     network: avalanche
@@ -345,9 +396,85 @@ dataSources:
           file: ./abis/FXPool.json
         - name: FXPoolFactory
           file: ./abis/FXPoolFactory.json
+        - name: Assimilator
+          file: ./abis/Assimilator.json
+        - name: ChainlinkPriceFeed
+          file: ./abis/ChainlinkPriceFeed.json
       eventHandlers:
         - event: NewFXPool(indexed address,indexed bytes32,indexed address)
-          handler: handleNewFXPool
+          handler: handleNewFXPoolV1
+  - kind: ethereum/contract
+    name: FXPoolDeployerTracker
+    network: avalanche
+    source:
+      address: '0x7ff7B43CEAc9a1163cCB525ac9Dc1dE9A8837b4B'
+      abi: FXPoolDeployerTracker
+      startBlock: 43049862
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/mappings/poolFactory.ts
+      entities:
+        - Balancer
+        - Pool
+      abis:
+        - name: Vault
+          file: ./abis/Vault.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+        - name: WeightedPool
+          file: ./abis/WeightedPool.json
+        - name: FXPool
+          file: ./abis/FXPool.json
+        - name: FXPoolDeployer
+          file: ./abis/FXPoolDeployer.json
+        - name: FXPoolDeployerTracker
+          file: ./abis/FXPoolDeployerTracker.json
+        - name: Assimilator
+          file: ./abis/Assimilator.json
+        - name: ChainlinkPriceFeed
+          file: ./abis/ChainlinkPriceFeed.json
+      eventHandlers:
+        - event: NewFXPoolDeployer(indexed address,indexed address,indexed address)
+          handler: handleNewFXPoolDeployer
+  - kind: ethereum/contract
+    name: FXPoolDeployer
+    network: avalanche
+    source:
+      address: '0x4042dC4110Ea9500338737605A60065c3de152C6'
+      abi: FXPoolDeployer
+      startBlock: 37150792
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/mappings/poolFactory.ts
+      entities:
+        - Balancer
+        - Pool
+      abis:
+        - name: Vault
+          file: ./abis/Vault.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+        - name: WeightedPool
+          file: ./abis/WeightedPool.json
+        - name: FXPool
+          file: ./abis/FXPool.json
+        - name: FXPoolDeployer
+          file: ./abis/FXPoolDeployer.json
+        - name: Assimilator
+          file: ./abis/Assimilator.json
+        - name: ChainlinkPriceFeed
+          file: ./abis/ChainlinkPriceFeed.json
+        - name: AggregatorConverter
+          file: ./abis/AggregatorConverter.json
+        - name: OunceToGramOracle
+          file: ./abis/OunceToGramOracle.json
+      eventHandlers:
+        - event: NewFXPool(indexed address,indexed bytes32,indexed address)
+          handler: handleNewFXPoolV2
 templates:
   - kind: ethereum/contract
     name: WeightedPool
@@ -772,7 +899,7 @@ templates:
     name: Gyro2Pool
     network: avalanche
     source:
-      abi: Gyro2Pool
+      abi: Gyro2V2Pool
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -785,8 +912,8 @@ templates:
         - PoolToken
         - GradualWeightUpdate
       abis:
-        - name: Gyro2Pool
-          file: ./abis/Gyro2Pool.json
+        - name: Gyro2V2Pool
+          file: ./abis/Gyro2V2Pool.json
         - name: Vault
           file: ./abis/Vault.json
       eventHandlers:
@@ -832,7 +959,7 @@ templates:
     name: GyroEPool
     network: avalanche
     source:
-      abi: GyroEPool
+      abi: GyroEV2Pool
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -845,8 +972,8 @@ templates:
         - PoolToken
         - GradualWeightUpdate
       abis:
-        - name: GyroEPool
-          file: ./abis/GyroEPool.json
+        - name: GyroEV2Pool
+          file: ./abis/GyroEV2Pool.json
         - name: Vault
           file: ./abis/Vault.json
       eventHandlers:
@@ -858,6 +985,44 @@ templates:
           handler: handlePauseGyroPool
         - event: UnpausedLocally()
           handler: handleUnpauseGyroPool
+  - kind: ethereum/contract
+    name: FXPoolDeployer
+    network: avalanche
+    source:
+      abi: FXPoolDeployer
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/mappings/poolFactory.ts
+      entities:
+        - Pool
+        - PoolShare
+        - Swap
+        - PoolToken
+        - GradualWeightUpdate
+      abis:
+        - name: Vault
+          file: ./abis/Vault.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+        - name: WeightedPool
+          file: ./abis/WeightedPool.json
+        - name: FXPool
+          file: ./abis/FXPool.json
+        - name: FXPoolDeployer
+          file: ./abis/FXPoolDeployer.json
+        - name: Assimilator
+          file: ./abis/Assimilator.json
+        - name: ChainlinkPriceFeed
+          file: ./abis/ChainlinkPriceFeed.json
+        - name: AggregatorConverter
+          file: ./abis/AggregatorConverter.json
+        - name: OunceToGramOracle
+          file: ./abis/OunceToGramOracle.json
+      eventHandlers:
+        - event: NewFXPool(indexed address,indexed bytes32,indexed address)
+          handler: handleNewFXPoolV2
   - kind: ethereum/contract
     name: FXPool
     network: avalanche

@@ -1,16 +1,36 @@
-specVersion: 0.0.2
 description: Balancer is a non-custodial portfolio manager, liquidity provider, and price sensor.
+specVersion: 0.0.2
 repository: https://github.com/balancer-labs/balancer-subgraph-v2
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
+    name: EventEmitter
+    network: celo
+    source:
+      address: '0x5874CB63Fbd1F1A3d1DfCbB451dc35a49Ec63D30'
+      abi: EventEmitter
+      startBlock: 27680967
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/mappings/eventEmitter.ts
+      entities:
+        - Pool
+      abis:
+        - name: EventEmitter
+          file: ./abis/EventEmitter.json
+      eventHandlers:
+        - event: LogArgument(indexed address,indexed bytes32,bytes,uint256)
+          handler: handleLogArgument
+  - kind: ethereum/contract
     name: Vault
     network: celo
     source:
-      address: '0xD25E02047E76b688445ab154785F2642c6fe3f73'
+      address: '0xc2eb5c675A49F87843c814FE76576d20e10C3CD0'
       abi: Vault
-      startBlock: 13179948
+      startBlock: 27681341
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -52,12 +72,12 @@ dataSources:
         - event: InternalBalanceChanged(indexed address,indexed address,int256)
           handler: handleInternalBalanceChange
   - kind: ethereum/contract
-    name: WeightedPoolFactory
+    name: WeightedPoolV4Factory
     network: celo
     source:
-      address: '0x47B7bdA16AB8B617E976c83A2c3c8664944d8Ed2'
+      address: '0x9c9D0025F27756217BDBb584cFB9Dd4aA58B1FEc'
       abi: WeightedPoolFactory
-      startBlock: 13179974
+      startBlock: 27681360
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -75,16 +95,20 @@ dataSources:
           file: ./abis/WeightedPoolFactory.json
         - name: WeightedPool
           file: ./abis/WeightedPool.json
+        - name: WeightedPoolV2
+          file: ./abis/WeightedPoolV2.json
+        - name: ComposableStablePool
+          file: ./abis/ComposableStablePool.json
       eventHandlers:
         - event: PoolCreated(indexed address)
-          handler: handleNewWeightedPool
+          handler: handleNewWeightedPoolV4
   - kind: ethereum/contract
-    name: StablePoolFactory
+    name: ComposableStablePoolV6Factory
     network: celo
     source:
-      address: '0x7dF194500b8b8dcFe6A0b8E412f8a166c89Bf255'
-      abi: StablePoolFactory
-      startBlock: 13180017
+      address: '0xfff23CDf2e98b6ea6f0ae856e8DeF6Fdb3141dF1'
+      abi: ComposableStablePoolV2Factory
+      startBlock: 27681377
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -100,13 +124,15 @@ dataSources:
           file: ./abis/ERC20.json
         - name: WeightedPool
           file: ./abis/WeightedPool.json
-        - name: StablePoolFactory
-          file: ./abis/StablePoolFactory.json
+        - name: ComposableStablePoolV2Factory
+          file: ./abis/ComposableStablePoolV2Factory.json
+        - name: ComposableStablePool
+          file: ./abis/ComposableStablePool.json
         - name: StablePool
           file: ./abis/StablePool.json
       eventHandlers:
         - event: PoolCreated(indexed address)
-          handler: handleNewStablePool
+          handler: handleNewComposableStablePoolV6
 templates:
   - kind: ethereum/contract
     name: WeightedPool
@@ -531,7 +557,7 @@ templates:
     name: Gyro2Pool
     network: celo
     source:
-      abi: Gyro2Pool
+      abi: Gyro2V2Pool
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -544,8 +570,8 @@ templates:
         - PoolToken
         - GradualWeightUpdate
       abis:
-        - name: Gyro2Pool
-          file: ./abis/Gyro2Pool.json
+        - name: Gyro2V2Pool
+          file: ./abis/Gyro2V2Pool.json
         - name: Vault
           file: ./abis/Vault.json
       eventHandlers:
@@ -591,7 +617,7 @@ templates:
     name: GyroEPool
     network: celo
     source:
-      abi: GyroEPool
+      abi: GyroEV2Pool
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -604,8 +630,8 @@ templates:
         - PoolToken
         - GradualWeightUpdate
       abis:
-        - name: GyroEPool
-          file: ./abis/GyroEPool.json
+        - name: GyroEV2Pool
+          file: ./abis/GyroEV2Pool.json
         - name: Vault
           file: ./abis/Vault.json
       eventHandlers:
@@ -617,6 +643,44 @@ templates:
           handler: handlePauseGyroPool
         - event: UnpausedLocally()
           handler: handleUnpauseGyroPool
+  - kind: ethereum/contract
+    name: FXPoolDeployer
+    network: celo
+    source:
+      abi: FXPoolDeployer
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/mappings/poolFactory.ts
+      entities:
+        - Pool
+        - PoolShare
+        - Swap
+        - PoolToken
+        - GradualWeightUpdate
+      abis:
+        - name: Vault
+          file: ./abis/Vault.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+        - name: WeightedPool
+          file: ./abis/WeightedPool.json
+        - name: FXPool
+          file: ./abis/FXPool.json
+        - name: FXPoolDeployer
+          file: ./abis/FXPoolDeployer.json
+        - name: Assimilator
+          file: ./abis/Assimilator.json
+        - name: ChainlinkPriceFeed
+          file: ./abis/ChainlinkPriceFeed.json
+        - name: AggregatorConverter
+          file: ./abis/AggregatorConverter.json
+        - name: OunceToGramOracle
+          file: ./abis/OunceToGramOracle.json
+      eventHandlers:
+        - event: NewFXPool(indexed address,indexed bytes32,indexed address)
+          handler: handleNewFXPoolV2
   - kind: ethereum/contract
     name: FXPool
     network: celo
