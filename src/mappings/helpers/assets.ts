@@ -7,8 +7,7 @@ import { Address } from '@graphprotocol/graph-ts';
 class Assets {
   public stableAssets: Address[];
   public pricingAssets: Address[];
-  public fxAssets: Address[];
-  public fxAggregators: Address[];
+  public fxAssetAggregators: Address[][];
 }
 
 export const USDC_ADDRESS = Address.fromString('0x8d97cea50351fb4329d591682b148d43a0c3611b');
